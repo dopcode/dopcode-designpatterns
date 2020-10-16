@@ -1,4 +1,5 @@
 package State;
+
 public class Main {
     public static void main(String[] args) {
         SafeFrame frame = new SafeFrame("State Sample");
@@ -7,7 +8,8 @@ public class Main {
                 frame.setClock(hour);
                 try {
                     Thread.sleep(1000);
-                } catch (InterruptedException e) {
+                }
+                catch (InterruptedException e) {
                 }
             }
         }

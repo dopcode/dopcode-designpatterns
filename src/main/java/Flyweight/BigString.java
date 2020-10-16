@@ -1,9 +1,10 @@
 package Flyweight;
+
 public class BigString {
 
     private BigChar[] bigchars;
 
-    public BigString(String string) {
+    public BigString( String string) {
         bigchars = new BigChar[string.length()];
         BigCharFactory factory = BigCharFactory.getInstance();
         for (int i = 0; i < bigchars.length; i++) {

@@ -1,4 +1,5 @@
 package FactoryMethod;
+
 import FactoryMethod.framework.Factory;
 import FactoryMethod.framework.Product;
 import FactoryMethod.idcard.IDCardFactory;

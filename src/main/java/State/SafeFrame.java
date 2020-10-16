@@ -1,17 +1,18 @@
 package State;
 
-import java.awt.Frame;
-import java.awt.Label;
-import java.awt.Color;
-import java.awt.Button;
-import java.awt.TextField;
-import java.awt.TextArea;
-import java.awt.Panel;
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Panel;
+import java.awt.TextArea;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SafeFrame extends Frame implements ActionListener, Context {
+    private static final long serialVersionUID = -2980551849180566098L;
+
     private TextField textClock = new TextField(60);
 
     private TextArea textScreen = new TextArea(10, 60);
@@ -26,36 +27,28 @@ public class SafeFrame extends Frame implements ActionListener, Context {
 
     private State state = DayState.getInstance();
 
-    // 생성자
     public SafeFrame( String title) {
         super(title);
         setBackground(Color.lightGray);
         setLayout(new BorderLayout());
-        // textClock을 배치
         add(textClock, BorderLayout.NORTH);
         textClock.setEditable(false);
-        // textScreen을 배치
         add(textScreen, BorderLayout.CENTER);
         textScreen.setEditable(false);
-        // 패널에 버튼을 저장
         Panel panel = new Panel();
         panel.add(buttonUse);
         panel.add(buttonAlarm);
         panel.add(buttonPhone);
         panel.add(buttonExit);
-        // 그 패널을 배치
         add(panel, BorderLayout.SOUTH);
-        // 표시
         pack();
-        show();
-        // listener의 설정
+//        show();
         buttonUse.addActionListener(this);
         buttonAlarm.addActionListener(this);
         buttonPhone.addActionListener(this);
         buttonExit.addActionListener(this);
     }
 
-    // 버튼이 눌려졌을 때 여기로 온다
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
         if (e.getSource() == buttonUse) {
@@ -75,7 +68,6 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         }
     }
 
-    // 시간설정
     public void setClock(int hour) {
         String clockstring = "현재 시간은";
         if (hour < 10) {
@@ -89,7 +81,6 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         state.doClock(this, hour);
     }
 
-    // 상태전환
     public void changeState(State state) {
         System.out.println(this.state + "에서" + state + "로 상태가 변화했습니다.");
         this.state = state;

@@ -7,7 +7,7 @@ import FactoryMethod.framework.Factory;
 import FactoryMethod.framework.Product;
 
 public class IDCardFactory extends Factory {
-    private List owners = new ArrayList();
+    private List<String> owners = new ArrayList<String>();
 
     protected Product createProduct(String owner) {
         return new IDCard(owner);
@@ -17,7 +17,7 @@ public class IDCardFactory extends Factory {
         owners.add(((IDCard) product).getOwner());
     }
 
-    public List getOwners() {
+    public List<String> getOwners() {
         return owners;
     }
 }

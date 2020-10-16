@@ -1,4 +1,5 @@
 package Mediator;
+
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Color;
@@ -9,15 +10,20 @@ import java.awt.event.ActionEvent;
 
 public class LoginFrame extends Frame implements ActionListener, Mediator {
     private ColleagueCheckbox checkGuest;
+
     private ColleagueCheckbox checkLogin;
+
     private ColleagueTextField textUser;
+
     private ColleagueTextField textPass;
+
     private ColleagueButton buttonOk;
+
     private ColleagueButton buttonCancel;
 
     // 생성자
     // Colleague들을 생성하고, 배치한 후에 표시를 실행한다
-    public LoginFrame(String title) {
+    public LoginFrame( String title) {
         super(title);
         setBackground(Color.lightGray);
         // 레이아웃 매니저를 사용해서 4X2의 그리드를 만든다
@@ -54,9 +60,9 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         // Mediator의 세트
         checkGuest.setMediator(this);
         checkLogin.setMediator(this);
-        textUser. setMediator(this);
-        textPass. setMediator(this);
-        buttonOk. setMediator(this);
+        textUser.setMediator(this);
+        textPass.setMediator(this);
+        buttonOk.setMediator(this);
         buttonCancel.setMediator(this);
         // Listener의 세트
         checkGuest.addItemListener(checkGuest);
@@ -68,16 +74,18 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     }
 
     // Colleage에서의 통지로 Colleage의 유효/무효를 판정한다 
-    public void colleagueChanged() {                          
+    public void colleagueChanged() {
         if (checkGuest.getState()) { 				// Guest 모드
-            textUser.setColleagueEnabled(false);                
-            textPass.setColleagueEnabled(false);                
-            buttonOk.setColleagueEnabled(true);               
-        } else { 						// Login 모드
-            textUser.setColleagueEnabled(true);                
-            userpassChanged();                              
-        }                                                   
-    }                                                       
+            textUser.setColleagueEnabled(false);
+            textPass.setColleagueEnabled(false);
+            buttonOk.setColleagueEnabled(true);
+        }
+        else { 						// Login 모드
+            textUser.setColleagueEnabled(true);
+            userpassChanged();
+        }
+    }
+
     // textUser 또는 textPass의 변경이 있었다
     // 각 Colleage의 유효/무효를 판정한다
     private void userpassChanged() {
@@ -85,14 +93,17 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
             textPass.setColleagueEnabled(true);
             if (textPass.getText().length() > 0) {
                 buttonOk.setColleagueEnabled(true);
-            } else {
+            }
+            else {
                 buttonOk.setColleagueEnabled(false);
             }
-        } else {
+        }
+        else {
             textPass.setColleagueEnabled(false);
             buttonOk.setColleagueEnabled(false);
         }
     }
+
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
         System.exit(0);

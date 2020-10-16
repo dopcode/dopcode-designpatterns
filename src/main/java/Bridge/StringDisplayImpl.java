@@ -1,24 +1,24 @@
-package TemplateMethod;
+package Bridge;
 
-public class StringDisplay extends AbstractDisplay {
+public class StringDisplayImpl extends DisplayImpl {
     private String string;
 
     private int width;
 
-    public StringDisplay( String string) {
+    public StringDisplayImpl( String string) {
         this.string = string;
         this.width = string.getBytes().length;
     }
 
-    public void open() {
+    public void rawOpen() {
         printLine();
     }
 
-    public void print() {
+    public void rawPrint() {
         System.out.println("|" + string + "|");
     }
 
-    public void close() {
+    public void rawClose() {
         printLine();
     }
 

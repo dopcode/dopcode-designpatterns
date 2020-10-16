@@ -1,26 +1,26 @@
 package State;
 public class NightState implements State {
     private static NightState singleton = new NightState();
-    private NightState() {                              // 생성자는 private
+    private NightState() {
     }
-    public static State getInstance() {                 // 유일한 인스턴스를 얻는다
+    public static State getInstance() {
         return singleton;
     }
-    public void doClock(Context context, int hour) {    // 시간설정
+    public void doClock(Context context, int hour) {
         if (9 <= hour && hour < 17) {
             context.changeState(DayState.getInstance());
         }
     }
-    public void doUse(Context context) {                // 금고사용
+    public void doUse(Context context) {
         context.callSecurityCenter("비상 : 야간금고 사용!");
     }
-    public void doAlarm(Context context) {              // 비상벨
+    public void doAlarm(Context context) {
         context.callSecurityCenter("비상벨(야간)");
     }
-    public void doPhone(Context context) {              // 일반통화
+    public void doPhone(Context context) {
         context.recordLog("야간통화 녹음");
     }
-    public String toString() {                          // 문자열 표현
+    public String toString() {
         return "[야간]";
     }
 }

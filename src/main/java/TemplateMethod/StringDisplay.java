@@ -13,7 +13,7 @@ public class StringDisplay extends AbstractDisplay {    // StringDisplay도
                                                      // 선을 그리고 있다.
     }
     public void print() {                               // print 메소드는
-        System.out.println(“|” + string + “|”);     // 필드에 기억해 둔 문자열의
+        System.out.println("|" + string + "|");     // 필드에 기억해 둔 문자열의
    							// 전후에 “|”을 붙여서 표시.
     }
     public void close() {                               // close 메소드는
@@ -22,10 +22,10 @@ public class StringDisplay extends AbstractDisplay {    // StringDisplay도
     }
     private void printLine() {                  // open과 close에서 호출된 printLine 메소드이다.
  						// private이기 때문에 이 클래스 안에서만 사용된다.
-        System.out.print(「+「);                // 테두리의 모서리를 표현하는”+” 마크를 표시.
+        System.out.print("+");                // 테두리의 모서리를 표현하는”+” 마크를 표시.
         for (int i = 0; i < width; i++) {       // width개의 “-“을 표시하고
-            System.out.print(「-「);            // 테두리 선으로 이용한다.
+            System.out.print("-");            // 테두리 선으로 이용한다.
         }
-        System.out.println(「+「);              // 테두리의 모서리를 표현하는 “+” 마크를 표시.
+        System.out.println("+");              // 테두리의 모서리를 표현하는 “+” 마크를 표시.
     }
 }

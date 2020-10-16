@@ -1,5 +1,8 @@
 package AbstractFactory.listfactory;
-import factory.*;
+import AbstractFactory.factory.Factory;
+import AbstractFactory.factory.Link;
+import AbstractFactory.factory.Page;
+import AbstractFactory.factory.Tray;
 
 public class ListFactory extends Factory {
     public Link createLink(String caption, String url) {

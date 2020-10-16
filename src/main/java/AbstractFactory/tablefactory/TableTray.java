@@ -1,6 +1,8 @@
 package AbstractFactory.tablefactory;
-import factory.*;
 import java.util.Iterator;
+
+import AbstractFactory.factory.Item;
+import AbstractFactory.factory.Tray;
 
 public class TableTray extends Tray {
     public TableTray(String caption) {

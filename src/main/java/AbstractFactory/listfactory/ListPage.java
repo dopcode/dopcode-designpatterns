@@ -1,6 +1,8 @@
 package AbstractFactory.listfactory;
-import factory.*;
 import java.util.Iterator;
+
+import AbstractFactory.factory.Item;
+import AbstractFactory.factory.Page;
 
 public class ListPage extends Page {
     public ListPage(String title, String author) {

@@ -1,6 +1,8 @@
 package AbstractFactory.tablefactory;
-import factory.*;
 import java.util.Iterator;
+
+import AbstractFactory.factory.Item;
+import AbstractFactory.factory.Page;
 
 public class TablePage extends Page {
     public TablePage(String title, String author) {

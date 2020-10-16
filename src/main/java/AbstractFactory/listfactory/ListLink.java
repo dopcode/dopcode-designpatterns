@@ -1,5 +1,5 @@
 package AbstractFactory.listfactory;
-import factory.*;
+import AbstractFactory.factory.Link;
 
 public class ListLink extends Link {
     public ListLink(String caption, String url) {

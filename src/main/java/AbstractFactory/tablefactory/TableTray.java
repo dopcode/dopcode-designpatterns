@@ -7,7 +7,7 @@ import AbstractFactory.factory.Tray;
 
 public class TableTray extends Tray {
     public TableTray( String caption) {
-        super(caption);                     // super(...)�Ƃ����\�L�@
+        super(caption);
     }
 
     public String makeHTML() {
